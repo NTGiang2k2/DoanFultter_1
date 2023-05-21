@@ -64,6 +64,7 @@ flutter:
     - images/delivered.png
     - images/time.png
     - images/Waiting.png
+    - images/h2.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
