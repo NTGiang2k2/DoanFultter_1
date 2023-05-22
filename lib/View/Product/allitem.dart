@@ -24,7 +24,6 @@ class ItemsWidget extends StatelessWidget {
           for(int i = 0;i<img.length;i++)
             GestureDetector(
               onTap: (){
-                print('sds00');
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) =>  ProductDetails()),
