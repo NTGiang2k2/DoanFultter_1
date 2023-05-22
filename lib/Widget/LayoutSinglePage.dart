@@ -5,61 +5,31 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../View/Product/Product.dart';
 import 'WidgetAll.dart';
 
-class LayoutWidget extends StatefulWidget {
-  LayoutWidget({super.key, required this.title});
-  String title;
-
+class LayoutWidgetSinglePage extends StatefulWidget {
+  LayoutWidgetSinglePage({super.key, required this.page});
+  Widget page;
   @override
-  State<LayoutWidget> createState() => _LayoutWidgetState();
+  State<LayoutWidgetSinglePage> createState() => _LayoutWidgetSinglePageState();
 }
 
-class _LayoutWidgetState extends State<LayoutWidget> {
-  TextEditingController _controllerSearch = TextEditingController();
-  int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
-    lstItem(),
-    PersonalPage(),
-  ];
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
+class _LayoutWidgetSinglePageState extends State<LayoutWidgetSinglePage> {
   @override
   Widget build(BuildContext context) {
+    TextEditingController _controllerSearch = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         leading: const Center(child: FaIcon(FontAwesomeIcons.chevronLeft)),
         actions: [
           IconButton(onPressed: () {}, icon: const FaIcon(FontAwesomeIcons.gear)),
         ],
-        title: Container(
+        title:Container(
           width: MediaQuery.of(context).size.width,
           height: 40,
           child: searchAppbar(context,_controllerSearch),
         ),
       ),
-      body: _widgetOptions.elementAt(_selectedIndex),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.home),
-            label: 'Trang chủ',
-          ),
-          BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.cartShopping),
-            label: 'Giỏ hàng',
-          ),
-          BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.user),
-            label: 'Tài khoản',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
-        onTap: _onItemTapped,
+      body:SingleChildScrollView(
+        child: widget.page,
       ),
     );
   }
@@ -80,7 +50,7 @@ class Search extends StatelessWidget {
           onPressed: (){},
         ),
         border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(25.0)),
+          borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
         hintStyle: const TextStyle(color: Colors.white),
         labelStyle: const TextStyle(color: Colors.white),

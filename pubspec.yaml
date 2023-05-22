@@ -64,13 +64,17 @@ flutter:
     - images/delivered.png
     - images/time.png
     - images/Waiting.png
-
+    - images/h1.jpg
     - images/h2.jpg
+    - images/h3.jpg
+    - images/h4.jpg
+    - images/h5.jpg
+    - images/h6.jpg
+    - images/h7.jpg
+    - images/h8.jpg
     - images/anh1.jpg
     - images/anh2.jpg
     - images/icondn.png
-
-
     - images/1.png
     - images/2.png
     - images/3.png

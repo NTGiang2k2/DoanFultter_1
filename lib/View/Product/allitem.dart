@@ -1,63 +1,87 @@
 import 'package:flutter/material.dart';
 
-class AllItem extends StatelessWidget {
-  const AllItem({super.key});
+import 'Detail/productDetail.dart';
 
+class ItemsWidget extends StatelessWidget {
+  List img = [
+    'h1','h2','h3','h4','h5','h6','h7','h8',
+  ];
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 2,
-      childAspectRatio: 0.68,
-      physics: NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      children: [
-        for(int i= 1; i < 9; i++)
-          Container(
-            padding: EdgeInsets.only(left: 10,right: 10,top: 20),
-            margin: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 235, 238, 242),
-              borderRadius: BorderRadius.circular(5),
-              boxShadow: [BoxShadow(
-                color: Color.fromARGB(26, 15, 15, 15),
-                blurRadius: 10,
-                spreadRadius: 10,
-              )]
-            ),
-            child: Column(
-                  children: [ 
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+      //margin: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+        decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(2),
+        color: const Color.fromARGB(255, 233, 231, 231),
+      ),
+      child: GridView.count(
+        physics: NeverScrollableScrollPhysics(),
+        crossAxisCount: 2,
+        shrinkWrap: true,
+        childAspectRatio: (150/195),
+        children: [
+          for(int i = 0;i<img.length;i++)
+            GestureDetector(
+              onTap: (){
+                print('sds00');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  ProductDetails()),
+                );
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                margin: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(2),
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  //border: Border.all(width: 1,color: Colors.grey),
+                  // boxShadow: [
+                  //   BoxShadow(color: Colors.grey.withOpacity(0.5),
+                  //   spreadRadius: 1,
+                  //   blurRadius: 5,
+                  //   )
+                  // ]
+                ),
+                child: Column(
+                  children: [
                     InkWell(
                       onTap: (){},
-                      child: Padding(
-                        padding: EdgeInsets.all(5),
-                        child: Image.asset("images/h2.jpg",
-                        height:150,
-                        width: 150,
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset("images/${img[i]}.jpg",
+                        width: 120,
+                        height: 120,
+                        fit: BoxFit.contain,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(bottom: 8),
+                      padding: EdgeInsets.only(bottom: 10),
                       child: Container(
                         alignment: Alignment.centerLeft,
-                        child: Text("Iphone 14 promax - Chính hãng 512Gb",
-                        style: TextStyle(fontSize: 16),),
-                      ),
+                        child: Text(
+                          img[i],
+                          style: TextStyle(fontSize: 18),),
+                      )
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("25.000.000 đ",
-                          style: TextStyle(fontSize: 16,color: Colors.red),),
-                        ],
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '29.999.999 đ',
+                          style: TextStyle(fontSize: 15, color: Colors.red),
+                        ),
                       ),
                     )
                   ],
                 ),
-          ),
-      ],
+              ),
+            )
+        ],
+      ),
     );
   }
 }
