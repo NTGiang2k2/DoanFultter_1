@@ -69,7 +69,7 @@ class _lstItemState extends State<lstItem> with SingleTickerProviderStateMixin{
                   tabs: [
                     Tab(text: "Liên quan",),
                     Tab(text: "Bán chạy",),
-                    Tab(text: "Lọc",),
+                    Tab(text: "Lọc v",),
                   ],
                 ),
               ),

@@ -61,7 +61,7 @@ class ItemsWidget extends StatelessWidget {
                     child: Container(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        '29.999.900 đ',
+                        '29.999.999 đ',
                         style: TextStyle(fontSize: 15, color: Colors.red),
                       ),
                     ),
