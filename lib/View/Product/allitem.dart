@@ -30,7 +30,7 @@ class AllItem extends StatelessWidget {
                       onTap: (){},
                       child: Padding(
                         padding: EdgeInsets.all(5),
-                        child: Image.asset("assets/h2.jpg",
+                        child: Image.asset("images/h2.jpg",
                         height:150,
                         width: 150,
                         ),
@@ -41,7 +41,7 @@ class AllItem extends StatelessWidget {
                       child: Container(
                         alignment: Alignment.centerLeft,
                         child: Text("Iphone 14 promax - Chính hãng 512Gb",
-                        style: TextStyle(fontSize: 20),),
+                        style: TextStyle(fontSize: 16),),
                       ),
                     ),
                     Padding(
@@ -50,7 +50,7 @@ class AllItem extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("25.000.000 đ",
-                          style: TextStyle(fontSize: 20,color: Colors.red),),
+                          style: TextStyle(fontSize: 16,color: Colors.red),),
                         ],
                       ),
                     )

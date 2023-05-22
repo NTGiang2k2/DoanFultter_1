@@ -1,12 +1,8 @@
-import 'package:do_an_flutter/Product/product.dart';
-import 'package:do_an_flutter/View/Cart/Cart.dart';
 import 'package:do_an_flutter/View/Home/Home.dart';
 import 'package:do_an_flutter/View/Personal/Personal.dart';
-import 'package:do_an_flutter/Widget/constAll.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../View/Cart/GioHang.dart';
+import '../View/Product/Product.dart';
 import 'WidgetAll.dart';
 
 class LayoutWidget extends StatefulWidget {
