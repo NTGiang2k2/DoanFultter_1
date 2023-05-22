@@ -1,3 +1,4 @@
+import 'package:do_an_flutter/Product/allitem.dart';
 import 'package:do_an_flutter/Product/product.dart';
 import 'package:do_an_flutter/View/Cart/Cart.dart';
 import 'package:do_an_flutter/View/Home/Home.dart';
@@ -22,7 +23,7 @@ class _LayoutWidgetState extends State<LayoutWidget> {
   int _selectedIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    ProductPage(),
+    lstItem(),
     PersonalPage(),
   ];
   void _onItemTapped(int index) {
