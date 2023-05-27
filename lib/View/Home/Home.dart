@@ -1,3 +1,4 @@
+import 'package:do_an_flutter/View/Auth/Login/Login.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,6 +11,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Text('Trang chủ');
+    return LoginPage();
   }
 }
