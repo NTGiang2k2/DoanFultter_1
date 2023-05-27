@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Đồ án Flutter',
       theme: ThemeData(
-        primarySwatch:Colors.blue,
+        primarySwatch: Colors.blue,
       ),
       home: LayoutWidget(title: 'Bán hàng'),
       // builder: EasyLoading.init(),

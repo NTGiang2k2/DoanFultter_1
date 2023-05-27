@@ -5,7 +5,7 @@ import 'package:do_an_flutter/View/Personal/Personal.dart';
 import 'package:do_an_flutter/Widget/constAll.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import '../View/Auth/Login/Login.dart';
 import '../View/Cart/GioHang.dart';
 import 'WidgetAll.dart';
 
@@ -21,7 +21,7 @@ class _LayoutWidgetState extends State<LayoutWidget> {
   TextEditingController _controllerSearch = TextEditingController();
   int _selectedIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
+    LoginPage(),
     ProductPage(),
     PersonalPage(),
   ];
@@ -42,7 +42,7 @@ class _LayoutWidgetState extends State<LayoutWidget> {
         title: Container(
           width: MediaQuery.of(context).size.width,
           height: 40,
-          child: searchAppbar(context,_controllerSearch),
+          child: searchAppbar(context, _controllerSearch),
         ),
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
@@ -73,7 +73,7 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      onChanged: (value) { },
+      onChanged: (value) {},
       // controller: editingController,
       decoration: InputDecoration(
         labelText: "Tìm kiếm...",
@@ -81,10 +81,10 @@ class Search extends StatelessWidget {
         suffixIcon: IconButton(
           icon: Icon(Icons.search),
           color: Colors.white,
-          onPressed: (){},
+          onPressed: () {},
         ),
         border: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(25.0)),
+          borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
         hintStyle: TextStyle(color: Colors.white),
         labelStyle: TextStyle(color: Colors.white),
