@@ -18,7 +18,7 @@ class PersonalPage extends StatefulWidget {
 }
 
 class _PersonalPageState extends State<PersonalPage> {
-  int index=0;
+  int index=0;bool loading = false;
   Widget btnIconStatus(BuildContext context,String image,String text,int value){
     return TextButton(
       onPressed: (){
@@ -31,7 +31,12 @@ class _PersonalPageState extends State<PersonalPage> {
       ),
       child: Column(
         children: [
-          Image.asset(image,fit: BoxFit.cover,width: 40,color: index==value?Colors.blue:Colors.black,),
+          Image.asset(
+            image,
+            fit: BoxFit.cover,
+            width: 40,
+            color: index==value?Colors.blue:Colors.black,
+          ),
           Text(text,textAlign: TextAlign.center,style: TextStyle(color: index==value?Colors.blue:Colors.black),)
         ],
       ),
@@ -40,10 +45,15 @@ class _PersonalPageState extends State<PersonalPage> {
   Widget btnSetting(BuildContext context,String text,Widget page){
     return TextButton(
       onPressed: (){
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => page),
-        );
+        if(page!=null){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => page),
+          );
+        }
+        else{
+          print('chưa gắn trang');
+        }
       },
       child: Column(
         children: [

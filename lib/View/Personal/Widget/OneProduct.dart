@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../Product/Detail/productDetail.dart';
+
 class OneProduct extends StatelessWidget {
   const OneProduct({Key? key}) : super(key: key);
 
@@ -7,7 +9,11 @@ class OneProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        print('product demo');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>  ProductDetails()),
+        );
+        // print('product demo');
       },
       child: Container(
         padding: const EdgeInsets.only(bottom: 10,top: 10,left: 10,right: 10),
